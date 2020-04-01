@@ -25,8 +25,6 @@ class TestLeaguepediaParser(TestCase):
         self.assertTrue('Primary' in tournament_level)
         self.assertTrue('Secondary' in tournament_level)
 
-
-
     def test_get_tournaments(self):
         lp = LeaguepediaParser()
 
