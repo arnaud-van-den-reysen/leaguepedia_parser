@@ -17,6 +17,16 @@ class TestLeaguepediaParser(TestCase):
         self.assertTrue('Korea' in regions)
         self.assertTrue('China' in regions)
 
+    def test_get_tournament_level(self):
+        lp = LeaguepediaParser()
+
+        tournament_level = lp.get_tournament_level()
+
+        self.assertTrue('Primary' in tournament_level)
+        self.assertTrue('Secondary' in tournament_level)
+
+
+
     def test_get_tournaments(self):
         lp = LeaguepediaParser()
 

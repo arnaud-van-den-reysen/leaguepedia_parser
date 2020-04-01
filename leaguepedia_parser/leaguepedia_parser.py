@@ -63,6 +63,20 @@ class LeaguepediaParser(EsportsClient if river_mwclient_loaded else object):
 
         return [row['Region'] for row in regions_dicts_list]
 
+    def get_tournament_level(self) -> List[str]:
+        """
+        Returns a list of all tournament level names that appear in the Tournaments table.
+
+        Issues one query.
+
+        :return:    The list of all tournament level names
+        """
+        tournament_level_dicts_list = self._cargoquery(tables='Tournaments',
+                                                       fields='TournamentLevel',
+                                                       group_by='TournamentLevel')
+
+        return [row['TournamentLevel'] for row in tournament_level_dicts_list]
+
     def get_tournaments(self,
                         region: str = None,
                         year: int = None,
